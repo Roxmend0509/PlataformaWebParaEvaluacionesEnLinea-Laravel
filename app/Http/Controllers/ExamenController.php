@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Examen;
-use App\Pregunta;
+use App\User;
 use App\Respuesta;
 use Illuminate\Database\Query\Builder;
 use DB; 
@@ -57,6 +57,19 @@ public function getExamenCompleto($id){
 public function getClavesExamen($id){
     $examen=Examen::where('id',$id)->first();
     $respuestas=$examen->respuestas;
+    return json_encode($examen);
+}
+
+public function updateAl(Request $request,$user_id){
+    $user=User::find($user_id);
+    $user->name = $request->input('name');
+    $user->email = $request->input('email');
+    $user->save();
+    echo json_encode($user);
+}
+
+public function getExamWithCal($id){
+    $examen=User::where('id',$id)->with('make.exams.calificaciones')->first();
     return json_encode($examen);
 }
 }

@@ -27,6 +27,11 @@ class Examen extends Model
     return $this->hasMany('App\Respuesta','AnswerCorrect');
     }
 
+    public function calificaciones()
+    {
+    return $this->hasMany('App\Calification','examen_id');
+    }
+
 
 }
 

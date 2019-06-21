@@ -16,6 +16,13 @@ class AuthController extends Controller
         echo json_encode($users);
      }
 
+     public function update(Request $request,$user_id){
+        $user=User::find($user_id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->save();
+        echo json_encode($user);
+    }
      
      public function destroy(Request $request,$user_id){
         $user=User::find($user_id);

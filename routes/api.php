@@ -25,6 +25,7 @@ Route::resource('answers','RespuestaController');
 Route::resource('examStudent','ExamStudentController');
 Route::resource('claveQuestion','ClaveExamenController');
 Route::get('examen/{id}','ExamenController@getExamen');
+Route::get('ExaWithCal/{id}','ExamenController@getExamWithCal');
 Route::get('examenes/{id}','ExamenController@getExamenCompleto');
 Route::get('question/{id}','PreguntaController@getPreguntas');
 Route::get('questiones/{id}','PreguntaController@getPregunta');
@@ -34,6 +35,8 @@ Route::get('student/{id}','CalificationController@getStudent');
 Route::get('clave/{id}','ClaveExamenController@getClave');
 Route::post('register', 'Api\AuthController@register');
 Route::get('examUser/{id}', 'ExamStudentController@getExams');
+Route::put('user/{id}', 'ExamenController@updateAl');
+
 
 Route::post('setAnswers/{user}/{examen}', 'AnswerSelectedController@setAnswers');
 Route::get('CalificacionExamen/{user}/{examen}', 'AnswerSelectedController@getCalificacionExamen');
@@ -54,4 +57,6 @@ Route::group([
     Route::post('me', 'AuthController@me');
     Route::post('sendPasswordResetLink','ResetPasswordController@sendEmail');
     Route::post('resetPassword','ChangePasswordController@process');
+    
+    
 });
