@@ -19,4 +19,9 @@ class ExamStudentAsociados extends Model
     {
     return $this->hasMany('App\User','id','user_id');
     }
+
+    public function calificaciones()
+    {
+    return $this->hasMany('App\Calification','user_id');
+    }
 }

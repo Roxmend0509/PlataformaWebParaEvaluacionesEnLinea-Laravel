@@ -32,6 +32,15 @@ class Examen extends Model
     return $this->hasMany('App\Calification','examen_id');
     }
 
+    public function examenes(){
+        return $this->hasMany('App\Examen','id','examen_id');
+    }
+
+    public function makes()
+    {
+        return $this->hasMany('App\ExamStudentAsociados', 'examen_id');
+    }
+
 
 }
 

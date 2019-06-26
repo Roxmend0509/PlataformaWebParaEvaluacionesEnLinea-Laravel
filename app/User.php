@@ -66,6 +66,6 @@ class User extends Authenticatable implements JWTSubject
 
     public function calificaciones()
     {
-    return $this->hasMany('App\Calification','examen_id');
+    return $this->hasMany('App\Calification','user_id');
     }
 }

@@ -17,4 +17,10 @@ class Calification extends Model
         return $this->hasMany('App\Examen','id','examen_id');
     }
 
+    public function makes()
+    {
+        return $this->hasMany('App\ExamStudentAsociados', 'user_id');
+    }
+
+
 }

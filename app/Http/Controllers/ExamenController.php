@@ -69,12 +69,12 @@ public function updateAl(Request $request,$user_id){
 }
 
 public function getExamWithCal($id){
-    $examen=User::where('id',$id)->with('makes.examenes.calificaciones')->first();
-    return json_encode($examen);
+    $detalle=User::where('id',$id)->with('makes.examenes.calificaciones')->first();
+    return json_encode($detalle);
 }
 
 public function search($email){
-    $user=User::find('email',$email)-get();
-    echo json_encode($user);
+    $user = User::where('email', 'like', "%$email%")->get();
+    return json_encode($user);
 }
 }
