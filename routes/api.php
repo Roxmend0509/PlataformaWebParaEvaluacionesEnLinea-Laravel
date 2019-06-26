@@ -27,6 +27,7 @@ Route::resource('claveQuestion','ClaveExamenController');
 Route::get('examen/{id}','ExamenController@getExamen');
 Route::get('ExaWithCal/{id}','ExamenController@getExamWithCal');
 Route::get('examenes/{id}','ExamenController@getExamenCompleto');
+Route::get('search/{email}','ExamenController@search');
 Route::get('question/{id}','PreguntaController@getPreguntas');
 Route::get('questiones/{id}','PreguntaController@getPregunta');
 Route::get('answer/{id}','RespuestaController@getRespuestas');

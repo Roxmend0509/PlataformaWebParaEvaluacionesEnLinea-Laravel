@@ -10,7 +10,7 @@ class ExamStudentAsociados extends Model
 {
     protected $fillable = [ 'examen_id', 'user_id','complete'];
 
-    public function exams()
+    public function examenes()
     {
     return $this->hasMany('App\Examen','id','examen_id');
     }
