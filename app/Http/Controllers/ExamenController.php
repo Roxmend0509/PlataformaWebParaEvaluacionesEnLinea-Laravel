@@ -8,6 +8,8 @@ use App\User;
 use App\Respuesta;
 use Illuminate\Database\Query\Builder;
 use DB; 
+use App\ExamStudentAsociados;
+use App\Calification;
 
 class ExamenController extends Controller
 {
@@ -69,8 +71,13 @@ public function updateAl(Request $request,$user_id){
 }
 
 public function getExamWithCal($id){
-    $detalle=User::where('id',$id)->with('makes.examenes.calificaciones')->first();
-    return json_encode($detalle);
+    $examenes = ExamStudentAsociados::where('user_id', $id)->pluck('examen_id');
+    $calificaciones = Calification::with('examenes')
+        ->where('user_id', $id)
+        ->whereIn('examen_id', $examenes)
+        ->get();
+        
+    return json_encode($calificaciones);
 }
 
 public function search($email){

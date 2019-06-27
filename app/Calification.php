@@ -22,5 +22,10 @@ class Calification extends Model
         return $this->hasMany('App\ExamStudentAsociados', 'user_id');
     }
 
+    public function calificaciones()
+    {
+    return $this->hasMany('App\Calification','id','examen_id');
+    }
+
 
 }

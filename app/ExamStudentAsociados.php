@@ -17,11 +17,11 @@ class ExamStudentAsociados extends Model
 
     public function users()
     {
-    return $this->hasMany('App\User','id','user_id');
+    return $this->hasMany('App\ExamStudentAsociados','id','examen_id');
     }
 
     public function calificaciones()
     {
-    return $this->hasMany('App\Calification','user_id');
+    return $this->hasMany('App\Calification','user_id','user_id');
     }
 }
