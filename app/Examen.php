@@ -38,7 +38,7 @@ class Examen extends Model
 
     public function makes()
     {
-        return $this->hasMany('App\ExamStudentAsociados', 'examen_id');
+        return $this->hasMany('App\ExamStudentAsociados', 'user_id');
     }
 
 
