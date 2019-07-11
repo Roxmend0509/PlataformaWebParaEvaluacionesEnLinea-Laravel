@@ -9,7 +9,7 @@ use App\ClaveExamen;
 
 class Examen extends Model
 {
-    protected $fillable = [ 'name','description', 'key', 'duration' ];
+    protected $fillable = [ 'name','description', 'key' ];
 
     
 

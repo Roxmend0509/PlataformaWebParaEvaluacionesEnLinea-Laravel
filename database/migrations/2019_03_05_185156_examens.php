@@ -19,7 +19,6 @@ class Examens extends Migration
             $table->string('name',250);
             $table->string('description',500);
             $table->string('key',6);
-            $table->time('duration');
             $table->timestamps();
         });
     }

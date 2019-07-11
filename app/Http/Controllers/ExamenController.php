@@ -23,7 +23,6 @@ class ExamenController extends Controller
          $exam->name = $request->input('name');
          $exam->description = $request->input('description');
          $exam->key = $request->input('key');
-         $exam->duration = $request->input('duration');
          $exam->save();
          echo json_encode($exam);
      }
@@ -34,7 +33,6 @@ class ExamenController extends Controller
         $exam->name = $request->input('name');
         $exam->description=$request->input('description');
         $exam->key = $request->input('key');
-        $exam->duration = $request->input('duration');
         $exam->save();
         echo json_encode($exam);
     }
